@@ -1,0 +1,39 @@
+<div class="row mt-4">
+    <div class="col-4">
+        <div class="card" style="width: 20rem;">
+            <img [src]="cicloParametro.imagen" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-title text-center">{{cicloParametro.nombre}} {{cicloParametro.curso}}</h2>
+              <h4>Conocimientos necesarios</h4>
+              <div *ngFor="let item of cicloParametro.asignaturas">
+                <ul *ngFor="let item2 of item.conocimientos">
+                  <li>{{item2.nombre}}</li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+    </div>
+    <div class="col-8">
+        <h3>Las asignaturas del ciclo son:</h3>
+        <div class="row mt-4">
+            <div class="col-4 mt-4" *ngFor="let item of cicloParametro.asignaturas">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.nombre}}</h5>
+                      <p class="card-text">Profesor: {{item.profesor}}</p>
+                      <p class="card-text">Ciclo: {{item.ciclo}}</p>
+                      <p class="card-text">Curso: {{item.curso}}</p>
+                      <div  class="row">
+                          <div class="col-2" *ngFor="let item2 of item.conocimientos">
+                            <img [src]="item2.imagen" width="40" height="40">
+                          </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+</div>

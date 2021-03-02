@@ -1,0 +1,19 @@
+<h2>Los ciclos tecnológicos son</h2>
+<div class="row mt-4">
+    
+    <div class="col" *ngFor="let item of ciclos">
+        <h2>{{item.nombre}} {{item.curso}}</h2>
+        <p>Asignaturas:</p>
+        <ul class="list-group" *ngFor="let item2 of item.asignaturas">
+            <li class="list-group-item">{{item2.nombre}}</li>
+        </ul>
+        <div class="card mt-4" style="width: 18rem;">
+            <img [src]="item.imagen | imagen" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.curso}} {{item.nombre}}</h5>
+              <a (click)="irCiclo(item.nombre,item.curso)" class="btn btn-primary">Ver detalles</a>
+            </div>
+          </div>
+    </div>
+
+</div>
